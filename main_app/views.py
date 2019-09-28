@@ -19,6 +19,10 @@ def index(request):
      
     return render(request ,'index.html', {'autos': autos})
 
+def show(request,auto_id):
+    auto = Auto.objects.get(id=auto_id)
+    return render(request,'show.html',{'auto': auto})
+
 #class Auto:
 #    def __init__(self, nombre, modelo, precio, color, img_url):
 #        self.nombre = nombre
